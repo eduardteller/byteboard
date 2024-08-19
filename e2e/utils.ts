@@ -73,6 +73,7 @@ export async function login(
   await expect(usernameMention).toHaveCount(1);
 }
 
+
 export async function createPost(page: Page, title: string, contents: string) {
   page.goto("http://localhost:5173/1");
   const postTitleInput = page.locator(`input[name="title"]`);
@@ -84,4 +85,13 @@ export async function createPost(page: Page, title: string, contents: string) {
   const post = page.locator("h3", { hasText: title });
   await expect(post).toHaveCount(1);
   return post;
+}
+
+export async function createComment(page: Page, comment: string) {
+  const commentInput = page.locator(`textarea[name="comment"]`);
+  const commentSubmitButton = page.locator(`button[type="submit"]`);
+  await commentInput.fill(comment);
+  await commentSubmitButton.click();
+  const createdComment = page.locator("p", { hasText: comment });
+  await expect(createdComment).toHaveCount(1);
 }
