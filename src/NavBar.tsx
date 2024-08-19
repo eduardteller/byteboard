@@ -18,7 +18,7 @@ export default function NavBar() {
           />
         </Link>
 
-        <div className="absolute bottom-1 right-1 flex flex-col gap-2 text-sm">
+        <div className="absolute right-1 top-1 flex flex-col gap-2 text-sm">
           <div className="flex justify-end gap-1">
             <p>Made by:</p>
             <p className="text-orange-500">Eduard Teller</p>
