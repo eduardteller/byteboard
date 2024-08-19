@@ -13,10 +13,22 @@ export default function NavBar() {
           <img
             id="logo"
             className="nav-logo"
-            src="https://supaship.io/supaship_logo_with_text.svg"
+            src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Reddit_logo.svg"
             alt="logo"
           />
         </Link>
+
+        <div className="absolute bottom-1 right-1 flex flex-col gap-2 text-sm">
+          <div className="flex justify-end gap-1">
+            <p>Made by:</p>
+            <p className="text-orange-500">Eduard Teller</p>
+          </div>
+          <div className="flex gap-1 text-xs">
+            <p>{`(This web app was developed with the guidance of fireship's`}</p>
+            <p className="text-green-500">supabase</p>
+            <p>{`course)`}</p>
+          </div>
+        </div>
 
         <ul className="nav-right-list">
           <li className="nav-message-board-list-item">

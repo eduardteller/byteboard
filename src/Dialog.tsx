@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from "react";
 
 export interface DialogProps {
@@ -32,7 +33,7 @@ export default function Dialog({
       <div className="dialog-container"></div>
       <div
         onClick={({ target }) => {
-          if (!allowClose || dialog.current?.contains(target as Node | null)) {
+          if (!allowClose || dialog.current?.contains(target as any)) {
             return;
           }
           updateDialogState(false);

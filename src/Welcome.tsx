@@ -37,7 +37,7 @@ export function Welcome() {
       open={true}
       contents={
         <>
-          <h2 className="welcome-header">Welcome to Supaship!</h2>
+          <h2 className="welcome-header">Welcome to Supaship!!</h2>
           <p className="text-center">
             Let's get started by creating a username:
           </p>

@@ -1,11 +1,11 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import MessageBoard from "./MessageBoard";
-import AllPosts from "./AllPosts";
-import PostView from "./PostView";
+import { AllPosts } from "./AllPosts";
 import { Welcome, welcomeLoader } from "./Welcome";
 import NavBar from "./NavBar";
 import { SupashipUserInfo, useSession } from "./use-session";
 import { createContext } from "react";
+import { PostView } from "./Post";
 
 export const UserContext = createContext<SupashipUserInfo>({
   session: null,

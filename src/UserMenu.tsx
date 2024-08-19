@@ -4,7 +4,6 @@ import { supaClient } from "./supa-client";
 
 export default function UserMenu() {
   const { profile } = useContext(UserContext);
-  console.log(profile);
 
   return (
     <>

@@ -15,13 +15,13 @@ test.describe("Message Board", () => {
   test.beforeEach(setupE2eTest);
 
   test.beforeEach(async ({ page }) => {
-    page.goto("http://localhost:1337");
+    page.goto("http://localhost:5173");
   });
 
   test.describe("not logged in", () => {
     test("can see message board, but cannot interact", async ({ page }) => {
       const messageBoardSignIn = page.locator(
-        `[data-e2e="message-board-login"]`
+        `[data-e2e="message-board-login"]`,
       );
       const createPostForm = page.locator(`[data-e2e="create-post-form"]`);
       await expect(messageBoardSignIn).toHaveCount(1);
@@ -32,14 +32,14 @@ test.describe("Message Board", () => {
       browser,
     }) => {
       const otherUser = await browser.newPage();
-      otherUser.goto("http://localhost:1337");
+      otherUser.goto("http://localhost:5173");
       await signUp(otherUser, testUserEmail, testUserPassword, testUserName);
       const post = await createPost(otherUser, "test post", "test contents");
       await post.click();
       await createComment(otherUser, "test comment");
-      page.goto("http://localhost:1337");
+      page.goto("http://localhost:5173");
       const messageBoardSignIn = page.locator(
-        `[data-e2e="message-board-login"]`
+        `[data-e2e="message-board-login"]`,
       );
       const createPostForm = page.locator(`[data-e2e="create-post-form"]`);
       await expect(messageBoardSignIn).toHaveCount(1);
@@ -101,7 +101,7 @@ test.describe("Message Board", () => {
         testUserEmail,
         testUserPassword,
         testUserName,
-        `[data-e2e="message-board-login"] button`
+        `[data-e2e="message-board-login"] button`,
       );
       expect(page.url()).toBe(postUrl);
       await expect(postContent).toHaveCount(1);

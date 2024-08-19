@@ -1,3 +1,249 @@
+@import url("https://use.typekit.net/rcr1opg.css");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  display: block;
+  font-size: 13px;
+  @media (min-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+body {
+  @apply bg-gray-700 text-gray-100;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display text-2xl font-normal text-white;
+}
+
+p {
+  @apply font-display font-normal text-white;
+}
+
+svg {
+  width: auto;
+}
+
+.container {
+  @apply mx-auto max-w-screen-2xl px-3 md:px-8;
+}
+
+.grid-list {
+  @apply grid list-none auto-cols-max grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+}
+
+/* AllPosts component styles */
+.posts-container {
+  @apply grid grid-cols-1;
+}
+
+.post-container {
+  @apply m-4 flex rounded border-2 text-white;
+}
+
+.post-upvote-container {
+  @apply mr-4 grid flex-none grid-cols-1 place-content-center bg-gray-800 p-2;
+}
+
+/* CreatePost component styles */
+.create-post-form {
+  @apply mb-8 ml-4 flex flex-col justify-start gap-4 rounded border-2 p-4;
+}
+
+.create-post-title-input {
+  @apply rounded p-2 text-xl text-gray-800;
+}
+
+.create-post-content-input {
+  @apply h-24 rounded p-4 text-gray-800;
+}
+
+.create-post-submit-button {
+  @apply font-display rounded bg-green-400 p-2 text-lg;
+}
+
+/* Dialog component styles */
+.dialog-container {
+  @apply fixed inset-0 z-40 bg-black opacity-75;
+}
+
+.dialog-backdrop {
+  @apply fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden outline-none focus:outline-none;
+}
+
+.dialog-placement {
+  @apply w-128 relative mx-auto my-6 w-auto;
+}
+
+.dialog-accent-border {
+  @apply absolute -inset-0.5 rounded-lg bg-gradient-to-r from-green-200 to-green-600 opacity-25 blur-lg transition duration-1000;
+}
+
+.dialog-content-container {
+  @apply relative grid place-content-center rounded-lg bg-black p-6;
+}
+
+/* Home component styles */
+.home-container {
+  @apply grid w-full place-content-center justify-center;
+}
+
+.home-header {
+  @apply m-4 text-center text-5xl text-green-400 drop-shadow-[0_0_9px_rgba(34,197,94,0.9)];
+}
+
+/* Login component styles  */
+.login-button {
+  @apply font-display bg-white px-4 py-2 text-xl text-black drop-shadow-[6px_6px_0_black] transition-all duration-300 hover:bg-purple-600 hover:text-white hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] md:inline-block;
+}
+
+.login-form-container {
+  @apply grid grid-cols-1 place-content-center !important;
+}
+
+.login-form-label {
+  @apply font-display text-xl text-white !important;
+}
+
+.login-form-button {
+  @apply font-display text-xl text-black !important;
+}
+
+.login-form-input {
+  @apply font-display m-4 rounded border-2 border-green-400 bg-white p-2 text-center text-2xl font-normal text-green-400 drop-shadow-[0_0_9px_rgba(34,197,94,0.9)] !important;
+}
+
+/* MessageBoard component styles */
+.message-board-container {
+  @apply flex w-full flex-col place-content-center;
+}
+
+.message-board-header-link {
+  @apply mb-1 text-center text-5xl;
+}
+
+.message-board-login-message {
+  @apply m-6 flex place-items-center justify-center text-center;
+}
+
+/* NavBar component styles */
+.nav-bar {
+  @apply text-gray1 mx-auto flex w-full max-w-screen-2xl justify-between p-6 px-3 md:p-8 md:px-8;
+}
+
+.nav-logo-link {
+  @apply invisible flex items-center justify-center text-center md:visible;
+}
+
+.nav-logo {
+  @apply mt-4 w-0 transition hover:scale-125 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)] md:w-64;
+}
+
+.nav-right-list {
+  @apply flex items-center justify-center;
+}
+
+.nav-message-board-list-item {
+  @apply mx-2 transition-transform hover:scale-105 md:mx-4;
+}
+
+.nav-message-board-link {
+  @apply text-gray2 font-sans text-xl font-bold leading-none;
+}
+
+.nav-auth-item {
+  @apply relative ml-2 mr-6;
+}
+
+/* Post component styles */
+.post-detail-outer-container {
+  @apply flex flex-col place-content-center;
+}
+
+.post-detail-inner-container {
+  @apply my-4 ml-4 flex grow rounded border-l-2 text-white;
+}
+
+.post-detail-upvote-container {
+  @apply flex h-full flex-col rounded bg-gray-800 p-2;
+}
+
+.post-detail-body {
+  @apply m-2 grid w-full;
+}
+
+.post-detail-content {
+  @apply m-4 rounded bg-gray-600 p-4 font-sans;
+}
+
+.post-detail-comment-container {
+  @apply my-4 ml-4 flex rounded border-l-2 text-white;
+}
+
+.post-detail-comment-inner-container {
+  @apply flex w-full grow;
+}
+
+.post-detail-comment-upvote-container {
+  @apply flex h-full grow-0 flex-col rounded bg-gray-800 p-2;
+}
+
+.post-detail-comment-body {
+  @apply my-2 ml-2 grid w-full grid-cols-1;
+}
+
+.post-detail-comment-content {
+  @apply m-4 rounded bg-gray-600 p-4 font-sans;
+}
+
+.post-detail-create-comment-form {
+  @apply mx-4 flex flex-col justify-start gap-4 rounded border-2 p-4;
+}
+
+.post-detail-create-comment-form-content {
+  @apply rounded p-4 text-gray-800;
+}
+
+.post-detail-create-comment-form-submit-button {
+  @apply font-display rounded bg-green-400 p-2 text-lg;
+}
+
+.post-detail-create-comment-form-cancel-button {
+  @apply font-display rounded bg-gray-400 p-2 text-lg;
+}
+
+/* UserMenu component styles */
+.user-menu-logout-button {
+  @apply font-display bg-white px-4 py-2 text-xl text-black drop-shadow-[6px_6px_0_black] transition-all duration-300 hover:bg-purple-600 hover:text-white hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] md:inline-block;
+}
+
+/* Welcome component styles */
+.welcome-header {
+  @apply m-4 text-center text-3xl text-green-400 drop-shadow-[0_0_9px_rgba(34,197,94,0.9)];
+}
+
+.welcome-name-form {
+  @apply grid grid-cols-1 place-items-center;
+}
+
+.welcome-name-input {
+  @apply font-display m-4 rounded border-2 border-green-400 p-2 text-center text-3xl text-green-400 drop-shadow-[0_0_9px_rgba(34,197,94,0.9)];
+}
+
+.welcome-form-error-message {
+  @apply text-center text-red-400;
+}
+
+.welcome-form-submit-button {
+  @apply font-display m-2 mb-8 rounded bg-green-400 p-2 text-center text-2xl;
+}

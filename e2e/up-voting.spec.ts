@@ -15,7 +15,7 @@ test.describe("Up Voting", () => {
   test.beforeEach(setupE2eTest);
 
   test.beforeEach(async ({ page }) => {
-    page.goto("http://localhost:1337");
+    page.goto("http://localhost:5173");
   });
 
   test("upvoting works on main page", async ({ page }) => {
@@ -29,10 +29,10 @@ test.describe("Up Voting", () => {
     await page.reload();
     await expect(upvoteCount).toHaveText("1");
     const filledUpvoteButton = page.locator(
-      `[data-e2e="upvote"][data-filled="true"]`
+      `[data-e2e="upvote"][data-filled="true"]`,
     );
     const filledDownvoteButton = page.locator(
-      `[data-e2e="downvote"][data-filled="true"]`
+      `[data-e2e="downvote"][data-filled="true"]`,
     );
     await expect(filledUpvoteButton).toHaveCount(1);
     await expect(filledDownvoteButton).toHaveCount(0);
@@ -54,10 +54,10 @@ test.describe("Up Voting", () => {
     const upvoteCount = page.locator(`[data-e2e="upvote-count"]`);
     await expect(upvoteCount).toHaveText("1");
     const filledUpvoteButton = page.locator(
-      `[data-e2e="upvote"][data-filled="true"]`
+      `[data-e2e="upvote"][data-filled="true"]`,
     );
     const filledDownvoteButton = page.locator(
-      `[data-e2e="downvote"][data-filled="true"]`
+      `[data-e2e="downvote"][data-filled="true"]`,
     );
     await expect(filledUpvoteButton).toHaveCount(1);
     await expect(filledDownvoteButton).toHaveCount(0);
@@ -84,10 +84,10 @@ test.describe("Up Voting", () => {
       await page.reload();
       await expect(upvoteCount.nth(i)).toHaveText("1");
       const filledUpvoteButton = page.locator(
-        `[data-e2e="upvote"][data-filled="true"]`
+        `[data-e2e="upvote"][data-filled="true"]`,
       );
       const filledDownvoteButton = page.locator(
-        `[data-e2e="downvote"][data-filled="true"]`
+        `[data-e2e="downvote"][data-filled="true"]`,
       );
       await expect(filledUpvoteButton).toHaveCount(1);
       await expect(filledDownvoteButton).toHaveCount(i);
@@ -105,6 +105,6 @@ export async function waitForClick(locator: Locator, ms = 10) {
   await new Promise<void>((res) =>
     setTimeout(() => {
       res();
-    }, ms)
+    }, ms),
   );
 }
