@@ -10,16 +10,11 @@ export default function NavBar() {
     <>
       <nav className="nav-bar">
         <Link className="nav-logo-link" to="/">
-          <img
-            id="logo"
-            className="nav-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Reddit_logo.svg"
-            alt="logo"
-          />
+          <img id="logo" className="nav-logo" src="/logo2.png" alt="logo" />
         </Link>
 
-        <div className="absolute right-1 top-1 flex flex-col gap-2 text-sm">
-          <div className="flex justify-end gap-1">
+        <div className="absolute left-1 top-1 flex flex-col gap-2 text-sm">
+          <div className="flex justify-start gap-1">
             <p>Made by:</p>
             <p className="text-orange-500">Eduard Teller</p>
           </div>
