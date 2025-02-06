@@ -1,12 +1,12 @@
-import { useContext, useEffect, useState } from "react";
-import Dialog from "./Dialog";
 import { Auth } from "@supabase/auth-ui-react";
-import { supaClient } from "./supa-client";
 import {
   // Import predefined theme
   ThemeSupa,
 } from "@supabase/auth-ui-shared";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "./App";
+import Dialog from "./Dialog";
+import { supaClient } from "./supa-client";
 
 export const setReturnPath = () => {
   localStorage.setItem("returnPath", window.location.pathname);
@@ -54,7 +54,7 @@ export default function Login() {
         contents={
           <>
             <Auth
-              providers={["google"]}
+              providers={[]}
               supabaseClient={supaClient}
               appearance={{
                 theme: ThemeSupa,
