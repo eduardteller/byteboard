@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# ByteBoard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern message board application demonstrating full-stack web development with real-time features.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Frontend**
 
-## Expanding the ESLint configuration
+- React 18 with TypeScript
+- React Router for navigation and routing
+- Tailwind CSS for responsive styling
+- Vite for build tooling and development
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+**Backend & Database**
 
-- Configure the top-level `parserOptions` property like this:
+- Supabase for backend-as-a-service
+- PostgreSQL with ltree extension for hierarchical comments
+- Real-time subscriptions for live updates
+- Row Level Security (RLS) for data protection
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+**Authentication & UI**
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Supabase Auth with built-in UI components
+- Context API for state management
+- Custom hooks for session handling
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+**Development & Quality**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- TypeScript for type safety
+- ESLint for code quality
+- Prettier for code formatting
+- Playwright for end-to-end testing
+
+## Key Skills Demonstrated
+
+- **Full-Stack Development**: Complete application from database design to user interface
+- **Real-Time Applications**: Live score updates and comment threading using WebSockets
+- **Database Design**: Hierarchical data structures with PostgreSQL ltree for nested comments
+- **Authentication & Security**: User authentication, authorization, and data security policies
+- **State Management**: React Context, custom hooks, and real-time state synchronization
+- **Modern React Patterns**: Functional components, hooks, and performance optimization
+- **TypeScript Proficiency**: Type-safe development with complex data structures
+- **Responsive Design**: Mobile-first design with Tailwind CSS
+- **Testing**: End-to-end testing with Playwright for critical user flows
+- **Performance**: Optimized pagination, lazy loading, and efficient re-renders
